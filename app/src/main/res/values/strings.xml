@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_version">1.0.0</string>
+    <string name="app_name">BOT FOSS</string>
+    <string name="ig_useragent" tools:ignore="TypographyDashes">Mozilla/5.0 (Linux; Android 10; RMX2050 Build/11_A.25; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/65.0.3325.109 Mobile Safari/537.36 Instagram 40.0.0.14.95 Android (21/5.0.1; 240dpi; 480x786; LGE/lge; LG-H342; c50ds; c50ds; pt_BR; 102221277)</string>
+    <string name="ig_cookie" tools:ignore="TypographyDashes">Your ig cookie</string>
+    <string name="url_instagram_force_login">https://www.instagram.com/accounts/login/?force_authentication%3D1%26enable_fb_login%3D1%26platform_app_id%3D2216244465360995</string>
+    <string name="api_request_login">login</string>
+    <string name="api_request_register">register</string>
+    <string name="msg_token_fmt">test token</string>
+    <string name="default_tweet">Advance social media tool by PlanckStudio</string>
+    <string name="default_ig_post_caption_main">NA</string>
+    <string name="default_ig_post_caption_hashtag">NA</string>
+    <string name="default_ig_post_caption_mentions">NA</string>
+    <string name="download">DOWNLOAD</string>
+    <string name="repost">REPOST</string>
+    <string name="ig_username">\@pbotapp</string>
+    <string name="rate_app_title">Give us rating</string>
+    <string name="rate_app_message">Take some time and provide us your valuable feedback on our BOT app\nRate us on Google Play Store</string>
+    <string name="rate_btn_pos">Rate now</string>
+    <string name="rate_btn_neg">No thanks</string>
+    <string name="rate_btn_nut">Remind me later</string>
+    <string name="history">History</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+    <string name="favorite">Favorite</string>
+</resources>

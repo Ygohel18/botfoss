@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ToolCardOuterLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView style="@style/ToolCardView">
+
+        <LinearLayout style="@style/HistoryCardInnerLayout">
+
+            <ImageView
+                android:id="@+id/history_image_holder"
+                style="@style/HistoryImageView"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:scaleType="fitCenter"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/history_key"
+        style="@style/ToolTitleTextView"
+        android:text="Username"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

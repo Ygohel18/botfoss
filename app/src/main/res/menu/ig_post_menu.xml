@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/igMediaRepost"
+        android:enabled="true"
+        android:icon="@drawable/ic_round_repeat_24"
+        android:title="Repost"
+        app:showAsAction="ifRoom"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/igMediaDl"
+        android:enabled="true"
+        android:icon="@drawable/ic_round_save_alt_24"
+        android:title="Download"
+        app:showAsAction="ifRoom"
+        tools:ignore="HardcodedText" />
+</menu>

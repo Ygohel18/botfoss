@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.instagram.InstagramRepostActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/igRepostHolder"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="0dp"
+        android:scaleType="fitCenter"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        tools:ignore="ContentDescription,MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/igRepostImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"/>
+
+            <include
+                android:id="@+id/igRepostCard"
+                android:layout_alignParentBottom="true"
+                layout="@layout/frame_ig_repost"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <HorizontalScrollView
+        app:layout_constraintTop_toBottomOf="@+id/igRepostHolder"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/igRepostPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:singleLine="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/igRepostSetTl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TL"
+                app:chipEndPadding="8dp"
+                app:chipStartPadding="8dp"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/igRepostSetTr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TR"
+                app:chipEndPadding="8dp"
+                app:chipStartPadding="8dp"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/igRepostSetBr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BR"
+                app:chipEndPadding="8dp"
+                app:chipStartPadding="8dp"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/igRepostSetBl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BL"
+                app:chipEndPadding="8dp"
+                app:chipStartPadding="8dp"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/igRepostSetRemove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REMOVE"
+                app:chipEndPadding="8dp"
+                app:chipStartPadding="8dp"
+                tools:ignore="HardcodedText" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        app:layout_constraintTop_toBottomOf="@+id/igRepostPosition"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:singleLine="true">
+
+            <com.google.android.material.chip.Chip
+                android:visibility="gone"
+                android:id="@+id/igRepostShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share On Instagram"
+                app:chipEndPadding="8dp"
+                app:chipStartPadding="8dp"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/igRepostSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SAVE"
+                app:chipEndPadding="8dp"
+                app:chipStartPadding="8dp"
+                tools:ignore="HardcodedText" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

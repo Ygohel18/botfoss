@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text_color">#1F1F1F</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#6B62FE</color>
+    <color name="colorPrimaryDark">#160AFE</color>
+    <color name="colorPrimaryLight">#F0EFFF</color>
+    <color name="colorPrimaryNight">#8F89FE</color>
+    <color name="colorPrimaryDarkNight">#6B62FE</color>
+    <color name="colorInstagramPrimary">#8134AF</color>
+    <color name="colorYoutubePrimary">#C4302B</color>
+    <color name="colorDanger">#FE5E41</color>
+    <color name="colorDivider">#000000</color>
+    <color name="light_blue_400">#FF29B6F6</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_600">#FF757575</color>
+    <color name="colorAccent">#23CE6B</color>
+    <color name="colorAccentDark">#1A9A4F</color>
+    <color name="colorAccentNight">#52E28E</color>
+    <color name="colorAccentDarkNight">#23CE6B</color>
+    <color name="colorOrange">#E8C547</color>
+    <color name="text_color_white">#fefefe</color>
+    <color name="text_color_ig">#2F2F2F</color>
+    <color name="iconDisabled">#2F2F2F</color>
+</resources>

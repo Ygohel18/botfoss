@@ -1,0 +1,37 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/pageFavorite"
+        android:enabled="true"
+        android:icon="@drawable/ic_round_favorite_24"
+        android:title="@string/favorite"/>
+    <item
+        android:id="@+id/pageNews"
+        android:enabled="true"
+        android:icon="@drawable/ic_round_notifications_24"
+        android:title="News"
+        tools:ignore="HardcodedText" />
+<!--    <item-->
+<!--        android:id="@+id/pageCoins"-->
+<!--        android:enabled="true"-->
+<!--        android:icon="@drawable/ic_baseline_monetization_on_24"-->
+<!--        android:title="Points"-->
+<!--        tools:ignore="HardcodedText" />-->
+    <item
+        android:id="@+id/pageHome"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/home"/>
+
+    <item
+        android:id="@+id/pageHistory"
+        android:enabled="true"
+        android:icon="@drawable/ic_round_history"
+        android:title="@string/history"/>
+
+    <item
+        android:id="@+id/pageSettings"
+        android:enabled="true"
+        android:icon="@drawable/ic_round_settings_24"
+        android:title="@string/settings"/>
+</menu>

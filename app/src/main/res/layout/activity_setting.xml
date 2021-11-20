@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    tools:context=".ui.SettingActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/settingHeader"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:text="Settings"
+                android:textColor="@color/text_color_white"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="@string/app_version"
+                android:textColor="@color/text_color_white"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/settingUid"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="ID"
+                android:textColor="@color/text_color_white"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:elevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_round_star_24"
+                        app:tint="@color/colorAccent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/settingUserStatusText"
+                        style="@style/TextAppearance.MaterialComponents.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="4dp"
+                        android:background="@color/text_color_white"
+                        android:padding="8dp"
+                        android:text="Free Subscription"
+                        android:textColor="@color/colorAccent"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <ScrollView
+        android:id="@+id/settingSwitchCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settingHeader"
+        android:layout_marginTop="-42dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:paddingBottom="16dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:paddingTop="8dp">
+
+                <com.google.android.material.card.MaterialCardView style="@style/SettingMainListCardVisible">
+
+                    <LinearLayout style="@style/SettingMainListCardLayoutSwitch">
+
+                        <ImageView
+                            style="@style/SettingMainListIcon"
+                            android:src="@drawable/ic_round_save_alt_24"
+                            tools:ignore="ContentDescription" />
+
+                        <LinearLayout style="@style/SettingMainListTextLayoutSwitch">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/SettingMainListTitle"
+                                android:text="Enable auto download"
+                                tools:ignore="HardcodedText" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/SettingMainListSubtitle"
+                                android:text="Shared link media will be auto downloaded"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/autoDownloadSwitch"
+                            style="@style/SettingLinkListSwitch" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView style="@style/SettingMainListCardVisible">
+
+                    <LinearLayout style="@style/SettingMainListCardLayoutSwitch">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_round_create_new_folder_24"
+                            app:tint="@color/colorPrimary" />
+
+                        <LinearLayout style="@style/SettingMainListTextLayoutSwitch">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/SettingMainListTitle"
+                                android:text="Enable nested folder"
+                                tools:ignore="HardcodedText" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/SettingMainListSubtitle"
+                                android:text="This will create sub folders for all downloads"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/folderDownloadSwitch"
+                            style="@style/SettingLinkListSwitch" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView style="@style/SettingMainListCardVisible">
+
+                    <LinearLayout style="@style/SettingMainListCardLayoutSwitch">
+
+                        <ImageView
+                            style="@style/SettingMainListIcon"
+                            android:src="@drawable/ic_round_history"
+                            tools:ignore="ContentDescription" />
+
+                        <LinearLayout style="@style/SettingMainListTextLayoutSwitch">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/SettingMainListTitle"
+                                android:text="Disable recent history"
+                                tools:ignore="HardcodedText" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/SettingMainListSubtitle"
+                                android:text="You wont be able to view your recent searches"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/searchHistorySwitch"
+                            style="@style/SettingLinkListSwitch" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView style="@style/SettingMainListCardVisible">
+
+                    <LinearLayout style="@style/SettingMainListCardLayoutSwitch">
+
+                        <ImageView
+                            style="@style/SettingMainListIcon"
+                            android:src="@drawable/ic_round_search_off_24"
+                            tools:ignore="ContentDescription" />
+
+                        <LinearLayout style="@style/SettingMainListTextLayoutSwitch">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/SettingMainListTitle"
+                                android:text="Enable privacy mode"
+                                tools:ignore="HardcodedText" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/SettingMainListSubtitle"
+                                android:text="Search and download privately without any history"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/privacyModeSwitch"
+                            style="@style/SettingLinkListSwitch" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/settingAds"
+                    style="@style/SettingMainListCardHidden">
+
+                    <LinearLayout style="@style/SettingMainListCardLayoutSwitch">
+
+                        <ImageView
+                            style="@style/SettingMainListIcon"
+                            android:src="@drawable/ic_round_star_24"
+                            tools:ignore="ContentDescription" />
+
+                        <LinearLayout style="@style/SettingMainListTextLayoutSwitch">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/SettingMainListTitle"
+                                android:text="Test User"
+                                tools:ignore="HardcodedText" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/SettingMainListSubtitle"
+                                android:text="Enable Bizarre Mode"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/disableAdsSwitch"
+                            style="@style/SettingLinkListSwitch" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/settingBackupButton"
+                    style="@style/SettingMainListCardVisible">
+
+                    <LinearLayout style="@style/SettingMainListCardLayoutSwitch">
+
+                        <ImageView
+                            style="@style/SettingMainListIcon"
+                            android:src="@drawable/ic_round_settings_backup_restore_24"
+                            tools:ignore="ContentDescription" />
+
+                        <LinearLayout style="@style/SettingMainListTextLayoutSwitch">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/SettingMainListTitle"
+                                android:text="Backup and restore"
+                                tools:ignore="HardcodedText" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/SettingMainListSubtitle"
+                                android:text="Backup and restore your app data"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/settingRemoveAccountButton"
+                    style="@style/SettingMainListCardVisible">
+
+                    <LinearLayout style="@style/SettingMainListCardLayoutSwitch">
+
+                        <ImageView
+                            style="@style/SettingMainListIcon"
+                            android:src="@drawable/ic_round_person_remove_24"
+                            tools:ignore="ContentDescription" />
+
+                        <LinearLayout style="@style/SettingMainListTextLayoutSwitch">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/SettingMainListTitle"
+                                android:text="Remove accounts"
+                                tools:ignore="HardcodedText" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/SettingMainListSubtitle"
+                                android:text="Remove all your connected social media accounts"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SettingMainTitle"
+                        android:text="Give us rating"
+                        tools:ignore="HardcodedText" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/settingReviewPlay"
+                        style="@style/SettingMainListCardVisible">
+
+                        <LinearLayout style="@style/SettingMainListCardLayoutLink">
+
+                            <ImageView
+                                style="@style/SettingLinkListIcon"
+                                android:src="@drawable/ic_playstore"
+                                tools:ignore="ContentDescription" />
+
+                            <LinearLayout style="@style/SettingMainListTextLayoutSwitch">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SettingMainListTitle"
+                                    android:text="Google Play Store"
+                                    tools:ignore="HardcodedText" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SettingMainListSubtitle"
+                                    android:text="Rate 5 stars on Google Play Store"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+                            <ImageView
+                                style="@style/SettingLinkListIconEnd"
+                                tools:ignore="ContentDescription" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/settingReviewProductHunt"
+                        style="@style/SettingMainListCardVisible">
+
+                        <LinearLayout style="@style/SettingMainListCardLayoutLink">
+
+                            <ImageView
+                                style="@style/SettingLinkListIcon"
+                                android:src="@drawable/ic_producthunt"
+                                tools:ignore="ContentDescription" />
+
+                            <LinearLayout style="@style/SettingMainListTextLayoutSwitch">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SettingMainListTitle"
+                                    android:text="Product Hunt"
+                                    tools:ignore="HardcodedText" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SettingMainListSubtitle"
+                                    android:text="Leave a review on producthunt"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+                            <ImageView
+                                style="@style/SettingLinkListIconEnd"
+                                tools:ignore="ContentDescription" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SettingMainTitle"
+                        android:text="Developer"
+                        tools:ignore="HardcodedText" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/settingDevPlanck"
+                        style="@style/SettingMainListCardVisible">
+
+                        <LinearLayout style="@style/SettingMainListCardLayoutLink">
+
+                            <ImageView
+                                android:id="@+id/settingLogoPlanck"
+                                style="@style/SettingLinkListIcon"
+                                android:src="@drawable/logo_planck"
+                                tools:ignore="ContentDescription" />
+
+                            <LinearLayout style="@style/SettingMainListTextLayoutSwitch">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SettingMainListTitle"
+                                    android:text="Planck Studio"
+                                    tools:ignore="HardcodedText" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SettingMainListSubtitle"
+                                    android:text="Graphics design and app/web development team"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+                            <ImageView
+                                style="@style/SettingLinkListIconEnd"
+                                tools:ignore="ContentDescription" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/settingDevYash"
+                        style="@style/SettingMainListCardVisible">
+
+                        <LinearLayout style="@style/SettingMainListCardLayoutLink">
+
+                            <ImageView
+                                android:id="@+id/settingLogoYash"
+                                style="@style/SettingLinkListIcon"
+                                android:src="@drawable/ic_ygohel18"
+                                tools:ignore="ContentDescription" />
+
+                            <LinearLayout style="@style/SettingMainListTextLayoutSwitch">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SettingMainListTitle"
+                                    android:text="Yash Gohel"
+                                    tools:ignore="HardcodedText" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SettingMainListSubtitle"
+                                    android:text="Full stack designer and Android developer"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+                            <ImageView
+                                style="@style/SettingLinkListIconEnd"
+                                tools:ignore="ContentDescription" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SettingMainTitle"
+                        android:text="Follow us on Instagram"
+                        tools:ignore="HardcodedText" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/settingInstagramLink"
+                        style="@style/SettingMainListCardVisible">
+
+                        <LinearLayout style="@style/SettingMainListCardLayoutLink">
+
+                            <ImageView
+                                android:id="@+id/settingLogoBot"
+                                style="@style/SettingLinkListIcon"
+                                android:src="@drawable/ic_bot_flate"
+                                tools:ignore="ContentDescription" />
+
+                            <LinearLayout style="@style/SettingMainListTextLayoutSwitch">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SettingMainListTitle"
+                                    android:text="BOT"
+                                    tools:ignore="HardcodedText" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SettingMainListSubtitle"
+                                    android:text="@string/ig_username"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+                            <ImageView
+                                style="@style/SettingLinkListIconEnd"
+                                tools:ignore="ContentDescription" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/SettingMainTitle"
+                        android:text="More apps"
+                        tools:ignore="HardcodedText" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/settingAppCrafty"
+                        style="@style/SettingMainListCardVisible">
+
+                        <LinearLayout style="@style/SettingMainListCardLayoutLink">
+
+                            <ImageView
+                                android:id="@+id/settingLogoCrafty"
+                                style="@style/SettingLinkListIcon"
+                                android:src="@drawable/ic_crafty"
+                                tools:ignore="ContentDescription" />
+
+                            <LinearLayout style="@style/SettingMainListTextLayoutSwitch">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SettingMainListTitle"
+                                    android:text="Crafty"
+                                    tools:ignore="HardcodedText" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SettingMainListSubtitle"
+                                    android:text="Free daily festive and greeting post creator"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+                            <ImageView
+                                style="@style/SettingLinkListIconEnd"
+                                tools:ignore="ContentDescription" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/settingAppAcademy"
+                        style="@style/SettingMainListCardVisible">
+
+                        <LinearLayout style="@style/SettingMainListCardLayoutLink">
+
+                            <ImageView
+                                android:id="@+id/settingLogoAcademy"
+                                style="@style/SettingLinkListIcon"
+                                android:src="@drawable/ic_academy"
+                                tools:ignore="ContentDescription" />
+
+                            <LinearLayout style="@style/SettingMainListTextLayoutSwitch">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SettingMainListTitle"
+                                    android:text="Course Center Academy"
+                                    tools:ignore="HardcodedText" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SettingMainListSubtitle"
+                                    android:text="NEET, JEE and many more free and paid online courses"
+                                    tools:ignore="HardcodedText" />
+                            </LinearLayout>
+
+                            <ImageView
+                                style="@style/SettingLinkListIconEnd"
+                                tools:ignore="ContentDescription" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                        android:id="@+id/settingLogoutBtn"
+                        style="@style/AppWhitePrimaryExtendedButton"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="32dp"
+                        android:text="LOGOUT"
+                        android:visibility="gone"
+                        app:icon="@drawable/ic_round_login_24"
+                        tools:ignore="ContentDescription,HardcodedText" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </ScrollView>
+
+</RelativeLayout>

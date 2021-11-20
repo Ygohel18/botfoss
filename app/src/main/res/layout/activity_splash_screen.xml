@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SplashScreen">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_bot_white"
+            app:tint="@color/colorPrimary" />
+    </FrameLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/splashCaption"
+        android:id="@+id/splashOpenBizarreButton"
+        style="@style/TextAppearance.AppCompat.Caption"
+        tools:ignore="HardcodedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:text="@string/app_version" />
+
+    <TextView
+       android:id="@+id/splashCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ic_planck"
+        android:layout_centerHorizontal="true"
+        android:alpha="0.36"
+        android:text="Crafted in India by"
+        android:textColor="@color/text_color"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/ic_planck"
+        android:layout_width="128dp"
+        android:layout_height="42dp"
+        android:src="@drawable/ic_planck_full"
+        tools:ignore="ContentDescription" />
+
+</RelativeLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_common_download.xml" value="0.1" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_connect_instagram.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_direct.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_favourite.xml" value="0.14" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_instagram_media.xml" value="0.15172101449275363" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_instagram_open.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_instagram_profile.xml" value="0.1" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_instagram_repost.xml" value="0.1" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_instagram_tool.xml" value="0.1" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_main.xml" value="0.10280797101449275" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_pinterest_download.xml" value="0.10280797101449275" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_recent.xml" value="0.10280797101449275" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_scrape.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_setting.xml" value="0.1621376811594203" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_under_maintenance.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_web_view_helper.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_whatsapp_tool.xml" value="0.3352941176470588" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/activity_youtube_download.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/bottom_sheet_layout_instagram_download.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/card_imageholder.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/card_webview_holder.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/card_youtube_holder.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/default_footer_layout.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/default_header.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/default_square_image_holder.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/default_twitter_content_holder.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/dialog_common_loading.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/dialog_preview_holder.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/frame_ig_repost.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/frame_instagram_layout.xml" value="0.1" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/frame_promotion_instagram.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/item_grid_imageview.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/item_recent.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/item_search_history.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/item_youtube_download.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/sample_social_profile_view.xml" value="0.17074275362318841" />
+        <entry key="..\:/Project/OpenSource/botandroid/app/src/main/res/layout/view_social_profile.xml" value="0.10326086956521739" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

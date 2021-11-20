@@ -1,0 +1,9 @@
+<resources>
+    <string name="channel_alpha">A</string>
+    <string name="channel_red">R</string>
+    <string name="channel_green">G</string>
+    <string name="channel_blue">B</string>
+    <string name="channel_hue">H</string>
+    <string name="channel_saturation">S</string>
+    <string name="channel_value">V</string>
+</resources>

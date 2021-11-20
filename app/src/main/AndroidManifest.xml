@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="in.planckstudio.foss.bot">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BOT"
+        tools:ignore="AllowBackup">
+        <activity android:name=".ui.CommonDownloadActivity" />
+        <activity android:name=".ui.PinterestDownloadActivity" />
+        <activity android:name=".ui.whatsapp.WhatsappToolActivity" />
+        <activity android:name=".ui.FavouriteActivity" />
+
+        <meta-data
+            android:name="firebase_performance_logcat_enabled"
+            android:value="true" />
+
+        <activity android:name=".ui.instagram.InstagramToolActivity" />
+        <activity android:name=".ui.instagram.InstagramRepostActivity" />
+        <activity android:name=".ui.SettingActivity" />
+        <activity android:name=".ui.instagram.InstagramMediaActivity" />
+
+        <activity
+            android:name=".ui.UnderMaintenanceActivity"
+            android:hardwareAccelerated="false" />
+        <activity
+            android:name=".ui.DirectActivity"
+            android:exported="true"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.instagram.InstagramProfileActivity" />
+        <activity
+            android:name=".ui.youtube.YoutubeDownloadActivity"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".ui.instagram.ConnectInstagramActivity"
+            android:hardwareAccelerated="false" />
+        <activity android:name=".ui.RecentActivity" />
+        <activity android:name=".helper.WebViewHelper" />
+        <activity
+            android:name=".ui.SplashScreen"
+            android:exported="true"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter
+                android:autoVerify="true"
+                android:label="Bot">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="action"
+                    android:scheme="bot" />
+                <data
+                    android:host="next"
+                    android:scheme="bot" />
+                <data
+                    android:host="add"
+                    android:scheme="bot" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="in.planckstudio.foss.bot" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="bot.planckstudio.in"
+                    android:path="/android/"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
