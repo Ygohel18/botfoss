@@ -27,7 +27,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.palette.graphics.Palette
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.android.volley.*
+import `in`.planckstudio.foss.bot.R
+import com.android.volley.Response
+import com.android.volley.RequestQueue
+import com.android.volley.AuthFailureError
+import com.android.volley.RetryPolicy
+import com.android.volley.DefaultRetryPolicy
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.bumptech.glide.Glide

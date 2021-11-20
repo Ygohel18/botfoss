@@ -2,7 +2,6 @@ package `in`.planckstudio.foss.bot.helper
 
 import `in`.planckstudio.foss.bot.SearchModel
 import `in`.planckstudio.foss.bot.model.FavouriteModel
-import `in`.planckstudio.foss.bot.model.LimitModel
 import `in`.planckstudio.foss.bot.model.SessionModel
 import android.annotation.SuppressLint
 import android.content.ContentValues
@@ -95,18 +94,6 @@ class DatabaseHelper(
             "SELECT * FROM $TABLE_NAME_FAVOURITE",
             null
         )
-    }
-
-    fun addLimit(model: LimitModel) {
-        val db = this.writableDatabase
-        try {
-            val values = ContentValues()
-            values.put(COLUMN_LIMIT_SID, model.getLimitSid())
-            values.put(COLUMN_LIMIT_TIME, Date().time.toInt().toString())
-            db.insert(TABLE_NAME_LIMIT, null, values)
-        } catch (e: Exception) {
-            //
-        }
     }
 
     fun addSearch(searchModel: SearchModel) {

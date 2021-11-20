@@ -28,7 +28,7 @@
         android:background="@color/colorAccent"
         android:backgroundTint="@color/colorAccent"
         android:padding="8dp"
-        android:text="@string/premium_user"
+        android:text=""
         android:textAlignment="center"
         android:textColor="@color/white"
         android:visibility="gone" />

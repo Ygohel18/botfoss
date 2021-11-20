@@ -1,5 +1,6 @@
 package `in`.planckstudio.foss.bot.ui.instagram
 
+import `in`.planckstudio.foss.bot.R
 import `in`.planckstudio.foss.bot.`interface`.NetworkResponse
 import `in`.planckstudio.foss.bot.api.InstagramApi
 import `in`.planckstudio.foss.bot.helper.AppHelper
@@ -24,7 +25,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.view.size
-import com.android.volley.*
+import com.android.volley.Response
+import com.android.volley.RequestQueue
+import com.android.volley.AuthFailureError
+import com.android.volley.RetryPolicy
+import com.android.volley.DefaultRetryPolicy
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.card.MaterialCardView

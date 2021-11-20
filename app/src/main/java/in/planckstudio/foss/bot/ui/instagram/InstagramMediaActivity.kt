@@ -13,7 +13,8 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.android.volley.*
+import `in`.planckstudio.foss.bot.R
+import com.android.volley.RequestQueue
 import com.android.volley.toolbox.Volley
 import com.bumptech.glide.Glide
 import com.google.android.material.appbar.MaterialToolbar

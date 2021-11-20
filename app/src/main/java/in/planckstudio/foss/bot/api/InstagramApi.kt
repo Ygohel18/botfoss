@@ -1,12 +1,17 @@
 package `in`.planckstudio.foss.bot.api
 
+import `in`.planckstudio.foss.bot.R
 import `in`.planckstudio.foss.bot.`interface`.NetworkResponse
 import `in`.planckstudio.foss.bot.helper.DatabaseHelper
 import `in`.planckstudio.foss.bot.helper.NetworkHelper
 import `in`.planckstudio.foss.bot.util.LocalStorage
 import android.content.Context
 import android.util.Log
-import com.android.volley.*
+import com.android.volley.Response
+import com.android.volley.RequestQueue
+import com.android.volley.AuthFailureError
+import com.android.volley.RetryPolicy
+import com.android.volley.DefaultRetryPolicy
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.coroutines.*
@@ -216,7 +221,6 @@ class InstagramApi(context: Context) : NetworkHelper(context), NetworkResponse {
                     "https://bot.planckstudio.in/api/v2/",
 
                     Response.Listener {
-                        Log.e("BOT", it)
                         r.resume(it)
                     },
                     Response.ErrorListener {

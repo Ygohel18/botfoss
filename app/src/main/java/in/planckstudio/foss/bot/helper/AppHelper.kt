@@ -13,7 +13,8 @@ import android.util.Log
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat.startActivity
-import com.android.volley.*
+import com.android.volley.Response
+import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -31,7 +32,6 @@ import kotlin.collections.HashMap
 class AppHelper(val context: Context) {
 
     private var ls = LocalStorage(context)
-    private val con = FirebaseHelper()
     private var mRequestQueue: RequestQueue = Volley.newRequestQueue(context)
     private var mQuery: String = ""
     private var mApiBaseUrl = "https://bot.planckstudio.in/v1/"

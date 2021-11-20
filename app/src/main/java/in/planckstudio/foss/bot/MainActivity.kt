@@ -2,7 +2,6 @@ package `in`.planckstudio.foss.bot
 
 import `in`.planckstudio.foss.bot.api.InstagramApi
 import `in`.planckstudio.foss.bot.helper.AppHelper
-import `in`.planckstudio.foss.bot.helper.CoinHelper
 import `in`.planckstudio.foss.bot.helper.DatabaseHelper
 import `in`.planckstudio.foss.bot.helper.WebViewHelper
 import `in`.planckstudio.foss.bot.ui.*
@@ -27,9 +26,6 @@ import androidx.core.app.ActivityCompat
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.Volley
 import com.bumptech.glide.Glide
-import com.google.android.gms.ads.*
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
@@ -64,46 +60,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mRequestQueue: RequestQueue
     private lateinit var instagramApi: InstagramApi
     private lateinit var ls: LocalStorage
-    private lateinit var coinHelper: CoinHelper
-    private lateinit var mAdView: AdView
-    private var mInterstitialAd: InterstitialAd? = null
     private lateinit var mPremiumText: MaterialTextView
 
     private fun init() {
 
         AppHelper(this).preLaunchTask()
-
-        AppHelper(this).getCoinData()
-        var adRequest = AdRequest.Builder().build()
-        coinHelper = CoinHelper(this)
-        InterstitialAd.load(
-            this,
-            "ca-app-pub-6785982567420185/1424680933",
-            adRequest,
-            object : InterstitialAdLoadCallback() {
-                override fun onAdFailedToLoad(adError: LoadAdError) {
-                    mInterstitialAd = null
-                }
-
-                override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                    coinHelper.addCoin(50)
-                    mInterstitialAd = interstitialAd
-                }
-            })
-
-        mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
-            override fun onAdDismissedFullScreenContent() {
-            }
-
-            override fun onAdFailedToShowFullScreenContent(adError: AdError?) {
-            }
-
-            override fun onAdShowedFullScreenContent() {
-                coinHelper.addCoin(200)
-                mInterstitialAd = null
-            }
-        }
-        mAdView = findViewById(R.id.frameBannerAd)
 
         mInstagramApi = InstagramApi(this)
         this.ls = LocalStorage(this)
@@ -139,30 +100,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun main() {
 
-        if (!ls.getValueBoolean("isDisableAdsEnabled") || !AppHelper(this).isLimitedEnabled()) {
-            MobileAds.initialize(this) {}
-            val adRequest = AdRequest.Builder().build()
-            mAdView.loadAd(adRequest)
-            mAdView.visibility = View.VISIBLE
-        } else {
-            mAdView.visibility = View.GONE
-            mPremiumText.visibility = View.VISIBLE
-        }
-
-        if (AppHelper(this).isLimitedEnabled()) {
-            mAdView.visibility = View.GONE
-            mPremiumText.visibility = View.VISIBLE
-        }
+        mPremiumText.visibility = View.GONE
 
         bottomBar.selectedItemId = R.id.pageHome
 
         bottomBar.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.pageHome -> {
-                    true
-                }
-                R.id.pageFavorite -> {
-                    startActivity(Intent(this, FavouriteActivity::class.java))
                     true
                 }
                 R.id.pageHistory -> {
@@ -173,18 +117,14 @@ class MainActivity : AppCompatActivity() {
                     startActivity(Intent(this, SettingActivity::class.java))
                     true
                 }
-//                R.id.pageCoins -> {
-//                    startActivity(Intent(this, CoinActivity::class.java))
-//                    true
-//                }
                 R.id.pageNews -> {
-                    coinHelper.addCoin(10)
-
-                    startActivity(Intent(
-                        this,
-                        WebViewHelper::class.java
-                    ).putExtra("weburl", "https://blog.planckstudio.in/category/botapp/")
-                        .putExtra("title", "Blog"))
+                    startActivity(
+                        Intent(
+                            this,
+                            WebViewHelper::class.java
+                        ).putExtra("weburl", "https://blog.planckstudio.in/category/botapp/")
+                            .putExtra("title", "Blog")
+                    )
                     true
                 }
                 else -> {
@@ -212,12 +152,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         val favData = (ls.getValueString("promotedFavourites").split(","))
-        (0 until favData.size).forEach { f ->
-            updateFavouriteData(favData[f])
-        }
 
         mPromoCard.setOnClickListener {
-            coinHelper.addCoin(10)
             openPromoUrl(ls.getValueString("appCurrentInstagramPromotionDestUrl"))
         }
 
@@ -253,17 +189,6 @@ class MainActivity : AppCompatActivity() {
             "twitter" -> {
                 card.setCardImage(R.drawable.ic_thumb_twitter)
             }
-        }
-
-        card.card.setOnLongClickListener {
-            when (type) {
-                "instagram" -> {
-                    if (ls.getValueBoolean("isDisableAdsEnabled")) {
-                        startActivity(Intent(this, InstagramTestSessionActivity::class.java))
-                    }
-                }
-            }
-            true
         }
 
         card.card.setOnClickListener {
@@ -309,18 +234,6 @@ class MainActivity : AppCompatActivity() {
 
         mToolHolder.addView(card.getCard())
         card.show()
-    }
-
-    private fun showCoinAd() {
-        if (!ls.getValueBoolean("isDisableAdsEnabled")) {
-            if (mInterstitialAd != null) {
-                mInterstitialAd?.show(this)
-            } else {
-                Toast.makeText(this, "Running out of Ads", Toast.LENGTH_SHORT).show()
-            }
-        } else {
-            Toast.makeText(this, "You are test user", Toast.LENGTH_SHORT).show()
-        }
     }
 
     private fun isInstagramConnected(): Boolean {
@@ -382,7 +295,6 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onDestroy() {
         super.onDestroy()
-        AppHelper(this).getCoinData()
     }
 
     @SuppressLint("SetTextI18n")
@@ -392,27 +304,10 @@ class MainActivity : AppCompatActivity() {
         bottomBar.selectedItemId = R.id.pageHome
         this.mProgress.visibility = View.GONE
         this.mInput.text?.clear()
-        AppHelper(this).getCoinData()
-    }
-
-    private fun updateFavouriteData(username: String) {
-        mInstagramApi.insertInstagramRecord(username)
     }
 
     @SuppressLint("Range")
     private fun updateInstagramUserData() {
         val accounts = db.getSessionList("instagram")
-
-        if (accounts != null && accounts.moveToFirst()) {
-            do {
-                mInstagramApi.addInstagramRecord(
-                    accounts.getString(
-                        accounts.getColumnIndex(
-                            DatabaseHelper.COLUMN_SESSION_USER
-                        )
-                    )
-                )
-            } while (accounts.moveToNext() && !accounts.isAfterLast)
-        }
     }
 }
